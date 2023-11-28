@@ -1,0 +1,102 @@
+main {
+    margin-top: 40px;
+}
+
+.main_container {
+
+}
+
+.background {
+    position: relative;
+    background-image: url('https://www.bmw.ru/content/dam/bmw/marketRU/bmw_ru/topics/offers-and-services/original-bmw-accessories/wheels/wheels_winter/snow_01102023_1680.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1696240757571.jpg');
+    height: 700px;
+    background-repeat: no-repeat;
+}
+
+.hello_block {
+    padding: 20px 0 0 110px
+}
+
+.first_span {
+    margin-right: 5px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.sec_span {
+    color: #fff;
+}
+
+h1 {
+    width: 500px;
+    font-size: 50px;
+    color: #fff;
+    position: absolute;
+    top: 350px;
+    left: 126px;
+}
+
+.choose {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.title p {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.title span {
+    text-align: center;
+    color: #262626;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+.options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.options_block {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: center;
+}
+
+.options_block img {
+    width: 510px;
+    height: 167px;
+    margin-left: 30px;
+}
+
+.card_text {
+    color: #262626;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.options_block button {
+    border: 1px solid #262626;
+    margin-top: 50px;
+    background-color: #0000;
+    color: #262626;
+    box-shadow: inset 0 0 0 var(--border-width,1px) var(--border-color,unset);
+    font-size: 16px;
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    outline: none;
+}
+
+.options_block button:hover {
+    border: 2px solid #262626;
+}

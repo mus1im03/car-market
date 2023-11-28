@@ -1,0 +1,36 @@
+footer {
+    margin-top: 50px;
+    background-color: #d9d3d3;
+}
+
+.footer_container {
+    padding: 60px 60px;
+    display: flex;
+}
+
+.info_block {
+    margin-right: 100px;
+}
+
+.title {
+    color: #4d4d4d;
+    font-size: .625rem;
+    font-weight: 300;
+    letter-spacing: var(--letter-spacing-eyebrow3);
+    line-height: .75rem;
+    margin-bottom: 1rem;
+}
+
+.navs {
+    display: flex;
+    flex-direction: column;
+}
+
+.info {
+    margin-top: 10px;
+    color: #4d4d4d;
+}
+
+.info:hover {
+    color: black;
+}
