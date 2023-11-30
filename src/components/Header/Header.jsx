@@ -23,7 +23,7 @@ const Header = () => {
           <Link>
             <img src={profilIcon} alt="profil" />
           </Link>
-          <Link>
+          <Link to="/geo">
             <img src={geoIcon} alt="geo" />
           </Link>
           <Link>
