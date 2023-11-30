@@ -39,6 +39,7 @@ a {
 
 .nav_block a:hover {
     border-bottom: 4px solid rgb(36, 114, 198);
+    color: black;
 }
 
 .search_block {
