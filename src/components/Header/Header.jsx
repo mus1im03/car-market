@@ -16,7 +16,7 @@ const Header = () => {
           </Link>
         </div>
         <div className={styles.nav_block}>
-          <Link>Автомобили</Link>
+          <Link to='/carsCategory'>Автомобили</Link>
           <Link>Электромобили</Link>
         </div>
         <div className={styles.search_block}>

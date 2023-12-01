@@ -1,0 +1,35 @@
+.cars_category {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card_img {
+    padding-left: 20px;
+    width: 200px;
+}
+
+.mPower {
+    margin-top: -40px;
+    width: 45px;
+    height: 16px;
+}
+
+.card_title {
+    margin-top: 10px;
+}
+
+.card_engine {
+    margin-top: 5px;
+    color: #4d4d4d;
+    font-size: .75rem;
+    font-weight: 700;
+    line-height: 1rem;
+    text-transform: uppercase;
+}
