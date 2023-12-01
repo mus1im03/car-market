@@ -4,8 +4,10 @@ import remont from "../../assets/img/remont.webp";
 import cars from "../../assets/img/cars.webp";
 import dillers from "../../assets/img/NxW_Home_ICON_TESTDRIVE.webp";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const MainContent = () => {
+  const dispatch = useDispatch()
   return (
     <main>
       <div className={styles.main_container}>
