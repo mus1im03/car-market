@@ -3,6 +3,7 @@ import styles from "./MainContent.module.css";
 import remont from "../../assets/img/remont.webp";
 import cars from "../../assets/img/cars.webp";
 import dillers from "../../assets/img/NxW_Home_ICON_TESTDRIVE.webp";
+import { Link } from "react-router-dom";
 
 const MainContent = () => {
   return (
@@ -35,7 +36,7 @@ const MainContent = () => {
             <div className={styles.options_block}>
               <img src={dillers} alt="dillers" />
               <span className={styles.card_text}>Диллер BMW</span>
-              <button className={styles.podrobnee}>Подробнее</button>
+              <Link to="/geo"> <button className={styles.podrobnee}>Подробнее</button> </Link>
             </div>
           </div>
         </div>
