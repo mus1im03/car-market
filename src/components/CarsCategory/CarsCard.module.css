@@ -8,15 +8,23 @@
 .card {
     display: flex;
     flex-direction: column;
+    width: 290px;
+    margin-top: 30px;
 }
 
 .card_img {
     padding-left: 20px;
-    width: 200px;
+    width: 240px;
+    min-height: 152px;
+    transition: width 0.5s ease;
+}
+
+.card_img:hover {
+    width: 260px;
 }
 
 .mPower {
-    margin-top: -40px;
+    /* margin-top: -40px; */
     width: 45px;
     height: 16px;
 }
