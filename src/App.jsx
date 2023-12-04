@@ -7,13 +7,24 @@ import Footer from "./components/Footer/Footer";
 import YandexMap from "./components/Map/YandexMap";
 import CarsCategory from "./components/CarsCategory/CarsCategory";
 import Card from "./components/cards/card";
+
+import OneCard from "./components/OneCard/OneCard";
+
 import CarsCardList from "./components/CarsCategory/CarsCardList";
+
 
 
 const App = () => {
   return (
     <>
       <Header />
+
+      <Routes>
+        <Route path="/" element={<MainContent />} />
+        <Route path="/geo" element={<YandexMap />} />
+        <Route path="/gep" element={<MainContent />}/>
+       <Route path="/oneCard" element={<OneCard />}/>
+
       <Routes>
         <Route path="/" element={<MainContent />} />
         <Route path="/geo" element={<YandexMap />} />
