@@ -5,7 +5,7 @@ import { fetchKonstruktorCar } from "../../features/carConstruktorSlice";
 import { Link, useParams } from "react-router-dom";
 
 const CarsCard = () => {
-  
+
   const { categoryId } = useParams();
 
   const dispatch = useDispatch();
@@ -26,6 +26,7 @@ const CarsCard = () => {
     <div className={styles.cars_category}>
       {konstruktor.map((konst) => {
         return (
+          <Link to={`/carsKonstruktor/${konst._id}`}>
             <div className={styles.card}>
               <img
                 src={`http://localhost:4090${konst.titleImg}`}
@@ -38,6 +39,7 @@ const CarsCard = () => {
               <span className={styles.card_title}>{konst.name}</span>
               <span className={styles.card_engine}>{konst.engineType}</span>
             </div>
+          </Link>
         );
       })}
     </div>

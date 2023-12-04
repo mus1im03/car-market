@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchKonstruktorCar } from "../../features/carConstruktorSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const CarsCardList = () => {
 
@@ -14,15 +14,15 @@ const CarsCardList = () => {
   );
 
   useEffect(() => {
-    window.scroll(0, 0);
+    // window.scroll(0, 0);
     dispatch(fetchKonstruktorCar());
-    getValuesFromLocalStorage();
+    // getValuesFromLocalStorage();
   }, [dispatch]);
 
   return (
 
     <div>
-        <img src={`http://localhost:4090${carInfo?.img}`} alt="" />
+        <img src={`http://localhost:4090${carInfo?.titleImg}`} alt="" />
     </div>
   )
 };
