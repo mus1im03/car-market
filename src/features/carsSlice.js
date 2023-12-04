@@ -20,30 +20,6 @@ export const fetchCars = createAsyncThunk("fetch/cars", async (_, thunkAPI) => {
   }
 });
 
-export const postCar = createAsyncThunk(
-  "create/car",
-  async ({ name, img, engineType, price, description }, thunkAPI) => {
-    try {
-      const res = await fetch(`http://localhost:4090/car`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, img, engineType, price, description }),
-      });
-
-      if (!res.ok) {
-        return thunkAPI.rejectWithValue("error");
-      }
-
-      const createCar = await res.json();
-      return createCar;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
-
 const carsSlice = createSlice({
   name: "cars",
   initialState,
@@ -51,9 +27,6 @@ const carsSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchCars.fulfilled, (state, action) => {
       state.cars = action.payload;
-    });
-    builder.addCase(postCar.fulfilled, (state, action) => {
-      state.cars.push(action.payload);
     });
   },
 });
