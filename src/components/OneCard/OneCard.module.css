@@ -88,3 +88,43 @@
 .cen {
     font-size: 40px;
 }
+
+.text {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease 0s;
+    margin-left: 74px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.text li{
+    list-style: none;
+    font-size: 14px;
+    margin-top: 8px;
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+}
+
+.text li::before {
+    content: "";
+    display: block;
+    flex-shrink: 0;
+    width: 7px;
+    height: 7px;
+    margin-top: 6px;
+    margin-right: 12px;
+    margin-left: 3px;
+    border-radius: 50%;
+    background: rgb(28, 105, 212);
+}
+
+.textOne {
+margin-left: 30px;
+}
+
+.infomode{
+    display: flex;
+    flex-direction: column;
+}
