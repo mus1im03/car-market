@@ -3,6 +3,7 @@ import styles from "./CarsCategory.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCategories } from "../../features/categorySlice";
 import CarsCard from "./CarsCard";
+import { Link } from "react-router-dom";
 
 const CarsGenres = () => {
     
@@ -21,7 +22,7 @@ const CarsGenres = () => {
         <div className={styles.categories}>
           {categories.map((category) => {
             return (
-              <span className={styles.category_name}>{category.name}</span>
+              <Link to={`/category/${category._id}`}><span className={styles.category_name}>{category.title}</span></Link>
             );
           })}
         </div>

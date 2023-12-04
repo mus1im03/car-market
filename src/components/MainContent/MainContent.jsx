@@ -31,7 +31,7 @@ const MainContent = () => {
             <div className={styles.options_block}>
               <img src={cars} alt="cars" />
               <span className={styles.card_text}>Автомобили с пробегом</span>
-              <button className={styles.podrobnee}>Найти сейчас</button>
+              <Link to='/sellCars'><button className={styles.podrobnee}>Найти сейчас</button></Link>
             </div>
             <div className={styles.options_block}>
               <img src={dillers} alt="dillers" />
