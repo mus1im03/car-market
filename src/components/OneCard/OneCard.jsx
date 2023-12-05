@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCars } from "../../features/carsSlice";
 import Infomode from "./Infomode";
 import { dataBase } from "./fakedatabase";
+import App from "../Offers/Offers";
 
 const OneCard = () => {
   const dispatch = useDispatch();
@@ -76,16 +77,7 @@ const OneCard = () => {
                 <Infomode name={"Функциональное оборудование"}  data={dataBase.function}/>
             </div>
           </div>
-          {/* <div>
-                <div className={styles.conteiner}>
-                    <h3>ЗАПРОС ПРЕДЛОЖЕНИЯ</h3>
-                    <p>Оставьте заявку и с вами свяжется менеджер делерсеого центра</p>
-                    <input  />
-                    <input />
-                    <input />
-                    <button>Отправить</button>
-                </div>
-                </div> */}
+          <App/>
         </div>
       </div>
       {/* <div>
