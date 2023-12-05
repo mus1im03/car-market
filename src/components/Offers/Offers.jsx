@@ -13,7 +13,7 @@ const NumberInput = ({ number, handleInput }) => {
   );
 };
 
-const App = () => {
+const Offers = () => {
   const [gospodin, setGospodin] = useState(true);
   const [gospoja, setGospoja] = useState(false);
 
@@ -84,4 +84,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Offers;

@@ -20,6 +20,7 @@ const App = () => {
         <Route path="/geo" element={<YandexMap />} />
         <Route path="/gep" element={<MainContent />} />
         <Route path="/oneCard" element={<OneCard />} />
+        <Route path="/carsList/:id" element={<OneCard />} />
 
         <Route path="/" element={<MainContent />} />
         <Route path="/geo" element={<YandexMap />} />

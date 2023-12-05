@@ -4,15 +4,16 @@ import * as style from "./Infomode.module.css";
 
 export default function Infomode({ data, name }) {
   const container = useRef();
+
   const [dropdownState, setDropdownState] = useState({ open: false });
 
   const handleDropdownClick = () =>
     setDropdownState({ open: !dropdownState.open });
 
   const handleClickOutside = (e) => {
-    //  if (container.current && !container.current.contains(e.target)) {
-    //  setDropdownState({ open: false });
-    //  }
+    if (container.current && !container.current.contains(e.target)) {
+      setDropdownState({ open: false });
+    }
   };
 
   useEffect(() => {
