@@ -6,6 +6,8 @@ import { fetchCars } from "../../features/carsSlice";
 import Infomode from "./Infomode";
 import { dataBase } from "./fakedatabase";
 import Offers from "../Offers/Offers";
+import App from "../Offers/Offers";
+
 
 const OneCard = () => {
 
@@ -68,6 +70,8 @@ const OneCard = () => {
             </div>
             <Offers />
           </div>
+          
+          <App/>
         </div>
       </div>
     </div>
