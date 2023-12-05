@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCars } from "../../features/carsSlice";
 import Infomode from "./Infomode";
 import { dataBase } from "./fakedatabase";
-
+import { useState } from "react";
 const OneCard = () => {
   const dispatch = useDispatch();
 
@@ -13,10 +13,13 @@ const OneCard = () => {
 
   useEffect(() => {
     dispatch(fetchCars());
-  }, [dispatch]);
+  }, []);
 
+  const [pashState, setPashState] = useState(true);
 
-  
+  const handlePashClick = () => {
+    setPashState(pashState ? false : true);
+  };
 
   return (
     <div>
@@ -62,39 +65,121 @@ const OneCard = () => {
         </div>
         <div>
           <div className={styles.text}>
-            <p>СТАНДАРТНОЕ ОБОРУДОВАНИЕ ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ</p>
-            <div className={styles.infomode}>
-                <Infomode name={"Системы информации и коммуникации"} data={dataBase.systems}/>
-                <Infomode name={"Безопасность, освещение и обзор"}  data={dataBase.security}/>
-                <Infomode name={"Пакеты и линии"}  data={dataBase.line}/>
-                <Infomode name={"Другое"}  data={dataBase.more}/>
-                <Infomode name={"Коробка передач и ходовая часть"}  data={dataBase.transmission}/>
-                <Infomode name={"Колеса и диски"}  data={dataBase.wheels}/>
-                <Infomode name={"Экстерьер"}  data={dataBase.exterior}/>
-                <Infomode name={"Интерьер"}  data={dataBase.interior}/>
-                <Infomode name={"Обивка и дизайн интерьера"}  data={dataBase.desing}/>
-                <Infomode name={"Функциональное оборудование"}  data={dataBase.function}/>
+            <div className={styles.divbtn}>
+              <p onClick={handlePashClick}>СТАНДАРТНОЕ ОБОРУДОВАНИЕ </p>
+              <p onClick={handlePashClick}>ТЕХНИЧСЕКИЕ ХАРАКТЕРИСТИКИ</p>
             </div>
-          </div>
-          {/* <div>
-                <div className={styles.conteiner}>
-                    <h3>ЗАПРОС ПРЕДЛОЖЕНИЯ</h3>
-                    <p>Оставьте заявку и с вами свяжется менеджер делерсеого центра</p>
-                    <input  />
-                    <input />
-                    <input />
-                    <button>Отправить</button>
+
+            {pashState && (
+              <div className={styles.infomode}>
+                <Infomode
+                  name={"Системы информации и коммуникации"}
+                  data={dataBase.systems}
+                />
+                <Infomode
+                  name={"Безопасность, освещение и обзор"}
+                  data={dataBase.security}
+                />
+                <Infomode name={"Пакеты и линии"} data={dataBase.line} />
+                <Infomode name={"Другое"} data={dataBase.more} />
+                <Infomode
+                  name={"Коробка передач и ходовая часть"}
+                  data={dataBase.transmission}
+                />
+                <Infomode name={"Колеса и диски"} data={dataBase.wheels} />
+                <Infomode name={"Экстерьер"} data={dataBase.exterior} />
+                <Infomode name={"Интерьер"} data={dataBase.interior} />
+                <Infomode
+                  name={"Обивка и дизайн интерьера"}
+                  data={dataBase.desing}
+                />
+                <Infomode
+                  name={"Функциональное оборудование"}
+                  data={dataBase.function}
+                />
+              </div>
+            )}
+            {!pashState && (
+              <div className={styles.contt}>
+                <div>
+                  <p>ДВИГАТЕЛЬ</p>
+                  <div className={styles.info_block}>
+                    <div className={styles.info_blocks}>
+                      <p>Рабочий объем, куб. см ................</p>
+                      <p>
+                        Максимальный крутящий момент, Н•м при об/мин
+                        ................
+                      </p>
+                    </div>
+                    <div className={styles.info_blocks}>
+                      <p>
+                        Максимальная мощность, л. с. при об/мин ................
+                      </p>
+                      <p>
+                        Количество цилиндров / клапанов на цилиндр
+                        ................
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                </div> */}
+
+                <div>
+                  <p>ХОДОВЫЕ КАЧЕСТВА</p>
+                  <div className={styles.info_block}>
+                    <div className={styles.info_blocks}>
+                      <p>Максимальная скорость, км/ч ................</p>
+                    </div>
+                    <div className={styles.info_blocks}>
+                      <p>Время разгона 0–100 км/ч, сек ................</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <p>РАСХОД ТОПЛИВА</p>
+                  <div className={styles.info_block}>
+                    <div className={styles.info_blocks}>
+                      <p>Смешанный цикл, л/100 км ................</p>
+                      <p>Загородный цикл, л/100 км ................</p>
+                    </div>
+                    <div className={styles.info_blocks}>
+                      <p>Городской цикл, л/100 км ................</p>
+                      <p>Выброс СО2, г/км ................</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <p>ГАБАРИТЫ</p>
+                  <div className={styles.info_block}>
+                    <div className={styles.info_blocks}>
+                      <p>Длина, мм ................</p>
+                      <p>Высота, мм (вместе с антенной) ................</p>
+                    </div>
+                    <div className={styles.info_blocks}>
+                      <p>Ширина, мм ................</p>
+                      <p>Клиренс, мм ................</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <p>МАССА</p>
+                  <div className={styles.info_block}>
+                    <div className={styles.info_blocks}>
+                      <p>Собственная масса (ЕС), кг................</p>
+                    </div>
+                    <div className={styles.info_blocks}>
+                      <p>Допустимая полная масса, кг ................</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          <div></div>
         </div>
       </div>
-      {/* <div>
-    <p>Цены носят информационный характер и ни при каких условиях не являются публичной офертой, определяемой положениями Статьи 435 ГК РФ.
-Все содержащиеся на Сайте сведения носят исключительно справочный характер и не являются исчерпывающими. Информация о продаже автомобилей, о наличии и или отсутствии автомобилей у официальных дилеров может не соответствовать действительности и/или утратить актуальность на момент обращения к официальному дилеру.
-Все условия приобретения автомобилей, цены, спецпредложения и комплектации автомобилей указаны с целью ознакомления и ни при каких обстоятельствах не являются публичной офертой, как она определена положениями статьи 435 ГК РФ.
-ООО «БМВ Русланд Трейдинг» не участвует во взаимоотношениях между официальными дилерами и покупателями автомобилей, не является поверенным/агентом/комиссионером в отношении автомобилей, не несет никакой ответственности по обязательствам, вытекающим из сделок, заключенных с официальными дилерами на основании информации на Сайте, а также не несет ответственности за любые убытки, возникшие в связи с использованием информации на Сайте.
-</p>
-</div> */}
     </div>
   );
 };
