@@ -9,6 +9,8 @@ const NumberInput = ({ number, handleInput }) => {
       maskChar=" "
       value={number}
       onChange={handleInput}
+      className={styles.tel}
+      placeholder="+7(999)-999-99-99"
     />
   );
 };
@@ -43,21 +45,21 @@ const App = () => {
   const [error, setError] = useState();
 
   return (
-    <div>
-        <div>
-      <div>
+    <div className={styles.offer}>
+        <div className={styles.gender}>
+      <div className={styles.genderInput}>
         <input type="radio" id="gospodin" name="drone" value="Gospodin" checked />{" "}
         <label for="huey">Господин</label>
       </div>
-      <div>
+      <div className={styles.genderInput}>
         <input type="radio" id="gospoja" name="drone" value="Gospoja" checked />{" "}
         <label for="huey">Госпожа</label>
       </div>
       </div>
       <form onSubmit={handleSubmit}>
         <label>
-          Имя:
           <input
+          className={styles.name}
             type="text"
             name="name"
             value={newOffer.name}
@@ -66,20 +68,28 @@ const App = () => {
           />
         </label>
         <label>
-          Surname:
           <input
+          className={styles.surname}
             type="text"
             name="surname"
             value={newOffer.surname}
             onChange={handleInputChange}
+            placeholder="Фамилия"
           />
         </label>
-        <button type="submit">Отправить</button>
-      </form>
-      <div style={{ margin: "10px" }}>
-        <div>Номер Телефона</div>
+      <div>
         <NumberInput number={number} handleInput={handleInput} />
       </div>
+      <div className={styles.checked}>
+      <input 
+      type="checkbox"
+      />
+      <p>Соглашение о неразглашении.</p>
+      </div>
+      <div className={styles.btn}>
+        <button type="submit">Отправить</button>
+        </div>
+      </form>
     </div>
   );
 };
