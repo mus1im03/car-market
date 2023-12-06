@@ -1,0 +1,58 @@
+.container {
+
+}
+
+.car_img {
+    position: relative;
+    width: 100%;
+}
+
+.car_mpower {
+    width: 80px;
+    position: absolute;
+    top: 305px;
+    left: 85px;
+}
+
+.car_name {
+    position: absolute;
+    top: 201px;
+    left: 86px;
+}
+
+.car_power {
+    color: #fff;
+    position: absolute;
+    top: 665px;
+    left: 91px;
+}
+
+.car_power span {
+    font-size: 24px;
+}
+
+.car_power p {
+    font-size: 14px;
+}
+
+.engine_type {
+    color: #fff;
+    position: absolute;
+    top: 665px;
+    left: 300px;
+}
+
+.engine_type span {
+    font-size: 24px;
+}
+
+.engine_type p {
+    font-size: 14px;
+}
+
+.konfig_car_name {
+    margin-left: 100px;
+    margin-top: 100px;
+    color: #262626;
+    font-size: 32px;
+}

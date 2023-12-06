@@ -1,5 +1,10 @@
+.carta {
+    cursor: pointer;
+    margin-top: 50px;
+}
+
 .osnova {
-    margin-top: 80px;
+    margin-top: 60px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

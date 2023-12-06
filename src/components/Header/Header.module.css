@@ -26,7 +26,7 @@ a {
 }
 
 .nav_block {
-    margin-left: -700px;
+    margin-left: -800px;
 }
 
 .nav_block a {
@@ -34,11 +34,11 @@ a {
     color: #666;
     font-weight: 600;
     margin-right: 20px;
-    padding-bottom: 35px;
+    padding-bottom: 33px;
 }
 
 .nav_block a:hover {
-    border-bottom: 4px solid rgb(36, 114, 198);
+    border-bottom: 5px solid rgb(36, 114, 198);
     color: black;
 }
 
