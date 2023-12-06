@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import InputMask from "react-input-mask";
-import styles from './Offers.module.css'
+import styles from "./Offers.module.css";
 
 const NumberInput = ({ number, handleInput }) => {
   return (
@@ -42,24 +42,37 @@ const Offers = () => {
     surname: "",
     phone: "",
   });
+  
   const [error, setError] = useState();
 
   return (
     <div className={styles.offer}>
-        <div className={styles.gender}>
-      <div className={styles.genderInput}>
-        <input type="radio" id="gospodin" name="drone" value="Gospodin" checked />{" "}
-        <label for="huey">Господин</label>
-      </div>
-      <div className={styles.genderInput}>
-        <input type="radio" id="gospoja" name="drone" value="Gospoja" checked />{" "}
-        <label for="huey">Госпожа</label>
-      </div>
+      <div className={styles.gender}>
+        <div className={styles.genderInput}>
+          <input
+            type="radio"
+            id="gospodin"
+            name="drone"
+            value="Gospodin"
+            checked
+          />{" "}
+          <label for="huey">Господин</label>
+        </div>
+        <div className={styles.genderInput}>
+          <input
+            type="radio"
+            id="gospoja"
+            name="drone"
+            value="Gospoja"
+            checked
+          />{" "}
+          <label for="huey">Госпожа</label>
+        </div>
       </div>
       <form onSubmit={handleSubmit}>
         <label>
           <input
-          className={styles.name}
+            className={styles.name}
             type="text"
             name="name"
             value={newOffer.name}
@@ -69,7 +82,7 @@ const Offers = () => {
         </label>
         <label>
           <input
-          className={styles.surname}
+            className={styles.surname}
             type="text"
             name="surname"
             value={newOffer.surname}
@@ -77,17 +90,15 @@ const Offers = () => {
             placeholder="Фамилия"
           />
         </label>
-      <div>
-        <NumberInput number={number} handleInput={handleInput} />
-      </div>
-      <div className={styles.checked}>
-      <input 
-      type="checkbox"
-      />
-      <p>Соглашение о неразглашении.</p>
-      </div>
-      <div className={styles.btn}>
-        <button type="submit">Отправить</button>
+        <div>
+          <NumberInput number={number} handleInput={handleInput} />
+        </div>
+        <div className={styles.checked}>
+          <input type="checkbox" />
+          <p>Соглашение о неразглашении.</p>
+        </div>
+        <div className={styles.btn}>
+          <button type="submit">Отправить</button>
         </div>
       </form>
     </div>

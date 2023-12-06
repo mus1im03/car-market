@@ -1,58 +1,109 @@
 .container {
-
 }
 
 .car_img {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .car_mpower {
-    width: 80px;
-    position: absolute;
-    top: 305px;
-    left: 85px;
+  width: 80px;
+  position: absolute;
+  top: 305px;
+  left: 85px;
 }
 
 .car_name {
-    position: absolute;
-    top: 201px;
-    left: 86px;
+  position: absolute;
+  top: 201px;
+  left: 86px;
 }
 
 .car_power {
-    color: #fff;
-    position: absolute;
-    top: 665px;
-    left: 91px;
+  color: #fff;
+  position: absolute;
+  top: 665px;
+  left: 91px;
 }
 
 .car_power span {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .car_power p {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .engine_type {
-    color: #fff;
-    position: absolute;
-    top: 665px;
-    left: 300px;
+  color: #fff;
+  position: absolute;
+  top: 665px;
+  left: 300px;
 }
 
 .engine_type span {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .engine_type p {
-    font-size: 14px;
+  font-size: 14px;
+}
+
+.car_configurator {
+    margin-top: 100px;
 }
 
 .konfig_car_name {
-    margin-left: 100px;
-    margin-top: 100px;
+  margin-left: 100px;
+  margin-top: 100px;
+  color: #262626;
+  font-size: 32px;
+}
+
+.car_options {
+  display: flex;
+  margin: 0 auto;
+  width: 600px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #666;
+  margin-top: 45px;
+  height: 65px;
+}
+
+.car_options span {
+  margin-right: 30px;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  transition: color .2s ease-in-out;
+  padding-bottom: 40px;
+  font-weight: 600;
+}
+
+.car_options span:active {
+    border-bottom: 5px solid #262626;
     color: #262626;
-    font-size: 32px;
+}
+
+.car_options span:hover {
+    border-bottom: 5px solid #262626;
+    color: #262626;
+}
+
+.car_options span:last-child {
+    margin-right: 0;
+}
+
+.car_colors {
+    padding-top: 30px;
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.car_colors img {
+    width: 48px;
+    height: 48px;
 }
