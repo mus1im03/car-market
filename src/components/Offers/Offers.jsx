@@ -1,49 +1,56 @@
 import React, { useState } from "react";
 import InputMask from "react-input-mask";
 import styles from "./Offers.module.css";
-
-const NumberInput = ({ number, handleInput }) => {
-  return (
-    <InputMask
-      mask="+7(999)-999-99-99"
-      maskChar=" "
-      value={number}
-      onChange={handleInput}
-      className={styles.tel}
-      placeholder="+7(999)-999-99-99"
-    />
-  );
-};
+import { useDispatch } from "react-redux";
+import { postNewOffer } from "../../features/offerSlice";
+import { useParams } from "react-router-dom";
 
 const Offers = () => {
-  const [gospodin, setGospodin] = useState(true);
-  const [gospoja, setGospoja] = useState(false);
+  const dispatch = useDispatch();
 
-  const handleClickGospoja = () => {
-    setGospodin(!false);
-    setGospoja(!true);
+  const {id} = useParams()
+
+  
+  const [gender, setGender] = useState('');
+  
+  console.log(gender);
+
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [phone, setPhone] = useState("");
+  const [agreement, setAgreement] = useState(false)
+
+  const [valid, setVlid] = useState(false)
+
+  const handleInputName = (e) => {
+    setName(e.target.value);
   };
 
-  const [number, setNumber] = useState("");
-  const handleInput = ({ target: { value } }) => setNumber(value);
+  const handleInputSurname = (e) => {
+    setSurname(e.target.value);
+  };
+
+  const handleInputPhone = (e) => {
+    setPhone(e.target.value)
+  };
+
+  const handleCheckboxChange = () => {
+    setAgreement((prevAgreement) => !prevAgreement);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNewOffer({ ...newOffer, [name]: value });
-  };
+    const formData = {
+      carId: id,
+      name,
+      surname,
+      phone,
+      gender,
+    };
 
-  const [offers, setOffers] = useState([]);
-  const [newOffer, setNewOffer] = useState({
-    name: "",
-    surname: "",
-    phone: "",
-  });
-  
-  const [error, setError] = useState();
+    dispatch(postNewOffer(formData));
+  };
 
   return (
     <div className={styles.offer}>
@@ -53,20 +60,21 @@ const Offers = () => {
             type="radio"
             id="gospodin"
             name="drone"
-            value="Gospodin"
-            checked
-          />{" "}
-          <label for="huey">Господин</label>
+            value={'Господин'}
+            onChange={(e) => setGender(e.target.value)}
+          />
+          <label htmlFor="gospodin">Господин</label>
         </div>
         <div className={styles.genderInput}>
           <input
             type="radio"
             id="gospoja"
+            value={'Госпожа'}
+
             name="drone"
-            value="Gospoja"
-            checked
-          />{" "}
-          <label for="huey">Госпожа</label>
+            onChange={(e) => setGender(e.target.value)}
+          />
+          <label htmlFor="gospoja">Госпожа</label>
         </div>
       </div>
       <form onSubmit={handleSubmit}>
@@ -75,8 +83,8 @@ const Offers = () => {
             className={styles.name}
             type="text"
             name="name"
-            value={newOffer.name}
-            onChange={handleInputChange}
+            value={name}
+            onChange={handleInputName}
             placeholder="Имя*"
           />
         </label>
@@ -85,16 +93,27 @@ const Offers = () => {
             className={styles.surname}
             type="text"
             name="surname"
-            value={newOffer.surname}
-            onChange={handleInputChange}
+            value={surname}
+            onChange={handleInputSurname}
             placeholder="Фамилия"
           />
         </label>
         <div>
-          <NumberInput number={number} handleInput={handleInput} />
+          <InputMask
+            mask="+7(999)-999-99-99"
+            maskChar=" "
+            value={phone}
+            onChange={handleInputPhone}
+            className={styles.tel}
+            placeholder="+7(999)-999-99-99"
+          />
         </div>
         <div className={styles.checked}>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={agreement}
+            onChange={handleCheckboxChange}
+          />
           <p>Соглашение о неразглашении.</p>
         </div>
         <div className={styles.btn}>

@@ -8,7 +8,7 @@ export const fetchOffers = createAsyncThunk(
   "fetch/offers",
   async (_, thunkAPI) => {
     try {
-      const res = await fetch("http://localhost:4090/offer");
+      const res = await fetch("http://localhost:4090/user");
 
       const categories = await res.json();
 
@@ -25,24 +25,25 @@ export const fetchOffers = createAsyncThunk(
 
 export const postNewOffer = createAsyncThunk(
   "offers/postNewOffer",
-  async ({ name, surname, phone }, thunkAPI) => {
+  async ({ name, surname, phone, gender, carId}, thunkAPI) => {
     try {
-      const response = await fetch("/api/offers", {
+      const response = await fetch("http://localhost:4090/offer", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, surname, phone }),
+        body: JSON.stringify({ name, surname, phone, gender, carId }),
       });
 
       if (!response.ok) {
-        throw new Error("Не удалось сделай запрос" + error.message);
+        throw new Error("Не удалось сделать запрос: " + e.message);
       }
 
       const newOffer = await response.json();
-      return newOffer;
+      console.log(newOffer);
+      return thunkAPI.fulfillWithValue(newOffer);
     } catch (error) {
-      return rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
@@ -57,7 +58,7 @@ const categorySlice = createSlice({
         state.offers = action.payload;
       })
       .addCase(postNewOffer.fulfilled, (state, action) => {
-        state.data.push(action.payload);
+        state.offers = action.payload;
       });
   },
 });
