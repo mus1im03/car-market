@@ -9,7 +9,7 @@ const Footer = () => {
         <div className={styles.info_block}>
             <span className={styles.title}>ВЫБОР И ПОКУПКА</span>
             <div className={styles.navs}>
-                <Link href="/" className={styles.info}>Модельный ряд</Link>
+                <Link to="/carsCategory" className={styles.info}>Модельный ряд</Link>
                 <Link to='/sellCars' className={styles.info}>Автомобили с пробегом</Link>
                 <a href="https://www.bmw.ru/ru/general/premium-selection/at-a-glance.html" className={styles.info}>BMW Premium Selection</a>
             </div>

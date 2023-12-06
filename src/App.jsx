@@ -9,6 +9,7 @@ import CarsCategory from "./components/CarsCategory/CarsCategory";
 import Card from "./components/cards/card";
 import OneCard from "./components/OneCard/OneCard";
 import CarsCardList from "./components/CarsCategory/CarsCardList";
+import Search from "./components/Search/Search";
 
 const App = () => {
   return (
@@ -28,6 +29,8 @@ const App = () => {
         <Route path="/category/:categoryId" element={<CarsCategory />} />
         <Route path="/carsCategory" element={<CarsCategory />} />
         <Route path="/carsKonstruktor/:id" element={<CarsCardList />} />
+        <Route path="/search-input" element={<Search />} />
+        {/* <Route path="/carsList/:id" element={<Search />} /> */}
       </Routes>
       <Footer />
     </>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import styles from "../OneCard/OneCard.module.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,11 +6,8 @@ import { fetchCars } from "../../features/carsSlice";
 import Infomode from "./Infomode";
 import { dataBase } from "./fakedatabase";
 import Offers from "../Offers/Offers";
-import App from "../Offers/Offers";
-
 
 const OneCard = () => {
-
   const dispatch = useDispatch();
 
   const { id } = useParams();
@@ -18,6 +15,13 @@ const OneCard = () => {
   const carInf = useSelector((state) =>
     state.cars.cars.find((cars) => cars._id === id)
   );
+
+  const scroll = () => {
+    window.scrollBy({
+      top: 1200,
+      behavior : 'smooth'
+    })
+  }
 
   useEffect(() => {
     dispatch(fetchCars());
@@ -44,12 +48,12 @@ const OneCard = () => {
                 <p>{carInf?.cars_info.mileage}</p>
                 <p>{carInf?.cars_info.owners} владельца</p>
                 <p>Экстерьер: {carInf?.cars_info.color}</p>
-                <p>
-                  Интерьер: {carInf?.cars_info.interior_color}
-                </p>
+                <p>Интерьер: {carInf?.cars_info.interior_color}</p>
                 <p className={styles.cen}>от {carInf?.cars_info.price}</p>
               </div>
-              <button className={styles.btn}>получить предложение</button>
+              <button className={styles.btn} onClick={() => scroll()}>
+                получить предложение
+              </button>
             </div>
           </div>
         </div>
@@ -57,22 +61,37 @@ const OneCard = () => {
           <div className={styles.text}>
             <p>СТАНДАРТНОЕ ОБОРУДОВАНИЕ ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ</p>
             <div className={styles.infomode}>
-                <Infomode name={"Системы информации и коммуникации"} data={dataBase.systems}/>
-                <Infomode name={"Безопасность, освещение и обзор"}  data={dataBase.security}/>
-                <Infomode name={"Пакеты и линии"}  data={dataBase.line}/>
-                <Infomode name={"Другое"}  data={dataBase.more}/>
-                <Infomode name={"Коробка передач и ходовая часть"}  data={dataBase.transmission}/>
-                <Infomode name={"Колеса и диски"}  data={dataBase.wheels}/>
-                <Infomode name={"Экстерьер"}  data={dataBase.exterior}/>
-                <Infomode name={"Интерьер"}  data={dataBase.interior}/>
-                <Infomode name={"Обивка и дизайн интерьера"}  data={dataBase.desing}/>
-                <Infomode name={"Функциональное оборудование"}  data={dataBase.function}/>
+              <Infomode
+                name={"Системы информации и коммуникации"}
+                data={dataBase.systems}
+              />
+              <Infomode
+                name={"Безопасность, освещение и обзор"}
+                data={dataBase.security}
+              />
+              <Infomode name={"Пакеты и линии"} data={dataBase.line} />
+              <Infomode name={"Другое"} data={dataBase.more} />
+              <Infomode
+                name={"Коробка передач и ходовая часть"}
+                data={dataBase.transmission}
+              />
+              <Infomode name={"Колеса и диски"} data={dataBase.wheels} />
+              <Infomode name={"Экстерьер"} data={dataBase.exterior} />
+              <Infomode name={"Интерьер"} data={dataBase.interior} />
+              <Infomode
+                name={"Обивка и дизайн интерьера"}
+                data={dataBase.desing}
+              />
+              <Infomode
+                name={"Функциональное оборудование"}
+                data={dataBase.function}
+              />
             </div>
-            <Offers />
           </div>
-          
-          <App/>
         </div>
+      </div>
+      <div className={styles.offers}>
+        <Offers/>
       </div>
     </div>
   );

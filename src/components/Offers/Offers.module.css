@@ -1,6 +1,11 @@
 body .offer{
-    width: 600px;
-    margin: auto;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 78px 0;
 }
 
 .offer form{
@@ -28,41 +33,45 @@ body .offer{
 
 .offer input{
     display: flex;
+    text-indent: 10px;
+    font-size: 18px;
 }
 
 .offer input::placeholder{
-    font-size: 20px;
+    font-size: 16px;
     color: rgb(177, 172, 172);
 }
 
 .gender{
     display: flex;
     justify-content: flex-start;
-    margin-right: 30px;
+    margin-right: 440px;
+    margin-bottom: 20px;
+}
+
+.genderInput input {
+    margin-bottom: 10px;
 }
 
 .genderInput{
     margin-right: 10px;
 }
 
-.offer input{
-    font-size: 20px;
-}
-
 .btn{
     display: flex;
     align-items: center;
     justify-content: center ;
+    margin-top: 30px;
 }
 
 .btn button{
     width: 300px;
     height: 50px;
-    background-color: rgb(90, 28, 215);
-    color: white;
-    font-size: 18px;
-    border-radius: 5px;
-    border-color: rgb(90, 28, 215);
+    background-color: rgb(28, 105, 212);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 800;
+    border: none;
 }
 
 .checked{

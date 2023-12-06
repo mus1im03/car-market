@@ -1,0 +1,32 @@
+.block_input {
+    width: 1300px;
+    margin: 0 auto;
+    margin-bottom: 165px;
+    padding-left: 30px;
+  }
+  
+  .block_input input {
+    width: 600px;
+    padding: 18px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #666;
+    margin-top: 40px;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .block_input ul {
+    margin-left: 20px;
+    width: 400px;
+  }
+  
+  .block_input li {
+    margin-top: 15px;
+    color: #666;
+  }
+  
+  .block_input li:hover {
+    color: #262525;
+    font-weight: 500;
+  }

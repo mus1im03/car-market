@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { fetchCars } from "../../features/carsSlice";
 import styles from "./Header.module.css";
 import logo from "../../assets/img/BMW_Grey-Colour_RGB.SVG.asset.1697707041685.jpg";
-import { Link } from "react-router-dom";
 import searchIcon from "../../assets/img/icons8-поиск-30.png";
-// import profilIcon from "../../assets/img/icons8-пользователь-24.png";
 import geoIcon from "../../assets/img/icons8-location-32.png";
 
 const Header = () => {
+
   return (
     <header>
       <div className={styles.container}>
@@ -16,18 +18,19 @@ const Header = () => {
           </Link>
         </div>
         <div className={styles.nav_block}>
-          <Link to='/carsCategory'>Автомобили</Link>
-          <Link to='/sellCars'>Покупка онлайн</Link>
+          <Link to="/carsCategory">Автомобили</Link>
+          <Link to="/sellCars">Покупка онлайн</Link>
         </div>
         <div className={styles.search_block}>
-          <Link>
-            {/* <img src={profilIcon} alt="profil" /> */}
-          </Link>
+          <Link>{/* <img src={profilIcon} alt="profil" /> */}</Link>
           <Link to="/geo">
             <img src={geoIcon} alt="geo" />
           </Link>
-          <Link>
-            <img src={searchIcon} alt="search" />
+          <Link to="/search-input">
+            <img
+              src={searchIcon}
+              alt="search"
+            />
           </Link>
         </div>
       </div>
