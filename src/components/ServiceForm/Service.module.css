@@ -56,9 +56,25 @@
   top: 50%;
   transform: translateY(-50%) rotate(-90deg);
 }
-.open{
+.error{
+    font-size: 14px;
     color: red;
 }
 .inputColor{
     border: 1px solid red;
+}
+
+.sended {
+  background-color: rgb(72, 72, 248);
+  width: 215px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  font-weight: 600;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  padding: 5px;
 }

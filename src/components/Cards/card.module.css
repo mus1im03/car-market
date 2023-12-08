@@ -1,0 +1,37 @@
+.carta {
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.osnova {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.image img{
+    width: 292px;
+    height: 219px;
+
+}
+
+.character {
+list-style-type: none;
+padding: 0;
+display: flex;
+flex-direction: column;
+}
+
+.character li{
+    margin-bottom: 10px;
+}
+
+.carta:hover{
+    box-shadow: -1px 5px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.info{
+    padding: 10px;
+}

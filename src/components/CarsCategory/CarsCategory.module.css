@@ -1,0 +1,32 @@
+.category_block {
+}
+
+.category_title_block {
+  padding: 70px 0 21px 128px;
+  border-bottom: 1px solid #666;
+}
+
+.text_category_title {
+  font-size: 32px;
+}
+
+.categories {
+  /* display: flex; */
+  margin-top: 30px;
+  margin-left: 25px;
+}
+
+.category_name {
+  margin-right: 30px;
+  color: #666;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+
+.category_name:hover {
+    color: black;
+    border-bottom: 3px solid black;
+}

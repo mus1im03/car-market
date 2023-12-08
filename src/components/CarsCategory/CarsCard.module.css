@@ -1,0 +1,43 @@
+.cars_category {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+    margin-top: 30px;
+}
+
+.card_img {
+    padding-left: 20px;
+    width: 240px;
+    min-height: 152px;
+    transition: width 0.5s ease;
+}
+
+.card_img:hover {
+    width: 260px;
+}
+
+.mPower {
+    /* margin-top: -40px; */
+    width: 45px;
+    height: 16px;
+}
+
+.card_title {
+    margin-top: 10px;
+}
+
+.card_engine {
+    margin-top: 5px;
+    color: #4d4d4d;
+    font-size: .75rem;
+    font-weight: 700;
+    line-height: 1rem;
+    text-transform: uppercase;
+}

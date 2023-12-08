@@ -1,8 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit';
-// import application from '../features/applicationSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import cars from "../features/carsSlice";
+import categories from "../features/categorySlice";
+import konstruktor from "../features/carConstruktorSlice";
+import service from "../features/serviceSlice";
 
 export const store = configureStore({
-    reducer: {
-        // application,
-    }
-})
+  reducer: {
+    cars,
+    categories,
+    konstruktor,
+    service,
+  },
+});
