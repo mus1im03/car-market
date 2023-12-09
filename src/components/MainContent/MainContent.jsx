@@ -48,14 +48,16 @@ const MainContent = () => {
             <div className={styles.options_block}>
               <img src={remont} alt="remont" />
               <span className={styles.card_text}>Запись на сервис</span>
-              <motion.button
-                whileHover={{ scale: 1.2 }}
-                onHoverStart={(e) => {}}
-                onHoverEnd={(e) => {}}
-                className={styles.podrobnee}
-              >
-                Подробнее
-              </motion.button>
+              <Link to='/service'>
+                <motion.button
+                  whileHover={{ scale: 1.2 }}
+                  onHoverStart={(e) => {}}
+                  onHoverEnd={(e) => {}}
+                  className={styles.podrobnee}
+                >
+                  Подробнее
+                </motion.button>
+              </Link>
             </div>
             <div className={styles.options_block}>
               <img src={cars} alt="cars" />
