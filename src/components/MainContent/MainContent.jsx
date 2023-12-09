@@ -28,7 +28,7 @@ const MainContent = () => {
             <div className={styles.options_block}>
               <img src={remont} alt="remont"/>
               <span className={styles.card_text}>Запись на сервис</span>
-              <button className={styles.podrobnee}>Подробнее</button>
+              <Link to={"service_sign"}><button className={styles.podrobnee}>Подробнее</button></Link>
             </div>
             <div className={styles.options_block}>
               <img src={cars} alt="cars" />

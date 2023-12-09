@@ -4,6 +4,7 @@ import "./App.css";
 import MainContent from "./components/MainContent/MainContent";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
+import ServiceForm from "./components/ServiceForm/ServiceForm";
 import YandexMap from "./components/Map/YandexMap";
 import CarsCategory from "./components/CarsCategory/CarsCategory";
 import Card from "./components/cards/card";
@@ -18,6 +19,7 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<MainContent />} />
+        <Route path="/service_sign" element={<ServiceForm />} />
         <Route path="/geo" element={<YandexMap />} />
         <Route path="/gep" element={<MainContent />} />
         <Route path="/oneCard" element={<OneCard />} />
