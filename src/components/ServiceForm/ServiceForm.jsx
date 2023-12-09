@@ -3,47 +3,68 @@ import { serviceData } from "./serviceData";
 import styles from "./Service.module.css";
 import { useDispatch } from "react-redux";
 import { postService } from "../../features/serviceSlice";
+import { motion } from "framer-motion";
 
 const ServiceForm = () => {
   const [vin, setVin] = useState("");
   const [reason, setReason] = useState("");
   const [year, setYear] = useState("");
   const [model, setModel] = useState("");
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const dispatch = useDispatch();
 
-  const [send, setSend] = useState(false)
+  const [send, setSend] = useState(false);
 
   const [error, setError] = useState(false);
 
   const handleText = () => {
-    setError(true)
-    if (vin.length === 17 && reason && year && model && name && phone.length === 11) {
-        dispatch(postService({ petition_reason: reason,  name, phone, vin, year, model}))
-        setError(false);
-        setSend(true)
+    setError(true);
+    if (
+      vin.length === 17 &&
+      reason &&
+      year &&
+      model &&
+      name &&
+      phone.length === 11
+    ) {
+      dispatch(
+        postService({ petition_reason: reason, name, phone, vin, year, model })
+      );
+      setError(false);
+      setSend(true);
 
-        setTimeout(() => {
-            setSend(false)
-        }, 4000);
+      setTimeout(() => {
+        setSend(false);
+      }, 4000);
     } else {
-        setError(true);
+      setError(true);
     }
   };
 
   return (
     <div className={styles.container}>
-        {send && <div className={styles.sended}>Сообщение отправлено!</div>}
-      <div className={styles.wrapper}>
+      {send && <div className={styles.sended}>Сообщение отправлено!</div>}
+      <motion.div
+        className={styles.wrapper}
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
         КОМФОРТНАЯ ЗАПИСЬ НА СЕРВИС ДЛЯ ВАШЕГО УДОБСТВА.
-      </div>
+      </motion.div>
       <div className={styles.wrapper_three}>
         <div>
           <div>Причина обрашения</div>
           <select
             onChange={(e) => setReason(e.target.value)}
-            className={`${styles.input} ${error && !reason ? styles.inputColor : ""}`}
+            className={`${styles.input} ${
+              error && !reason ? styles.inputColor : ""
+            }`}
           >
             {serviceData.reasons.map((elem) => {
               return <option value={elem}>{elem}</option>;
@@ -51,21 +72,26 @@ const ServiceForm = () => {
           </select>
         </div>
         <div>
-            <div>Ф.И.О</div>
-            <input 
+          <div>Ф.И.О</div>
+          <input
             onChange={(e) => setName(e.target.value)}
-            className={`${styles.input} ${error && !name ? styles.inputColor : ""}`}
-            type="text" />
+            className={`${styles.input} ${
+              error && !name ? styles.inputColor : ""
+            }`}
+            type="text"
+          />
         </div>
         <div>
-            <div>Номер телефона</div>
-            <input
-            type='tel'
+          <div>Номер телефона</div>
+          <input
+            type="tel"
             placeholder="+7(999) 999-99-99"
             onChange={(e) => setPhone(e.target.value)}
             value={phone}
-            className={`${styles.input} ${error && phone.length !== 11 ? styles.inputColor : ""}`}
-            />
+            className={`${styles.input} ${
+              error && phone.length !== 11 ? styles.inputColor : ""
+            }`}
+          />
         </div>
       </div>
       <div className={styles.wrapper_three}>
@@ -74,17 +100,23 @@ const ServiceForm = () => {
           <input
             onChange={(e) => setVin(e.target.value)}
             value={vin}
-            className={`${styles.input} ${error && vin.length !== 17 ? styles.inputColor : ""}`}
+            className={`${styles.input} ${
+              error && vin.length !== 17 ? styles.inputColor : ""
+            }`}
             type="text"
           />
-          {error && vin.length !== 17 && <div className={styles.error}>Введите корректное число</div>}
+          {error && vin.length !== 17 && (
+            <div className={styles.error}>Введите корректное число</div>
+          )}
           <div>* VIN код должен содержать 17 знаков</div>
         </div>
         <div>
           <div>Год</div>
           <select
             onChange={(e) => setYear(e.target.value)}
-            className={`${styles.input} ${error && !year ? styles.inputColor : ""}`}
+            className={`${styles.input} ${
+              error && !year ? styles.inputColor : ""
+            }`}
           >
             {serviceData.year
               .map((elem) => {
@@ -97,7 +129,9 @@ const ServiceForm = () => {
           <div>Модель</div>
           <select
             onChange={(e) => setModel(e.target.value)}
-            className={`${styles.input} ${error && !model ? styles.inputColor : ""}`}
+            className={`${styles.input} ${
+              error && !model ? styles.inputColor : ""
+            }`}
           >
             {serviceData.model.map((elem) => {
               return <option value={elem}>{elem}</option>;
@@ -106,9 +140,14 @@ const ServiceForm = () => {
         </div>
       </div>
       <div className={styles.wrapper_three}>
-        <button onClick={handleText} className={styles.btn}>
+        <motion.button
+          onClick={handleText}
+          className={styles.btn}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+        >
           Отправить
-        </button>
+        </motion.button>
       </div>
     </div>
   );

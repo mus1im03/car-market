@@ -8,6 +8,7 @@ import CarsCardList from "./components/CarsCategory/CarsCardList";
 import Search from "./components/Search/Search";
 import CarsCategory from "./components/CarsCategory/CarsCategory";
 import { AnimatePresence } from "framer-motion";
+import ServiceForm from "./components/ServiceForm/ServiceForm";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -27,6 +28,7 @@ const AnimatedRoutes = () => {
         <Route path="/category/:categoryId" element={<CarsCategory />} />
         <Route path="/carsKonstruktor/:id" element={<CarsCardList />} />
         <Route path="/search-input" element={<Search />} />
+        <Route path="/service" element={<ServiceForm />}/>
       </Routes>
     </AnimatePresence>
   );
