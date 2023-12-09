@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import { fetchKonstruktorCar } from "../../features/carConstruktorSlice";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./CarsCardList.module.css";
+import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { Scroll } from "@react-three/drei";
 
 const CarsCardList = () => {
   // Цвета машины
@@ -261,6 +264,8 @@ const CarsCardList = () => {
 
   const dispatch = useDispatch();
 
+  const [selected, setSelected] = useState(0);
+
   const { id } = useParams();
 
   const carInfo = useSelector((state) =>
@@ -272,7 +277,12 @@ const CarsCardList = () => {
   }, [dispatch]);
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      initial={{ opacity: 0, transform: "translate3d(100%,0,0)" }}
+      animate={{ opacity: 1, transform: "translate3d(0%,0,0)" }}
+      exit={{ opacity: 0, transform: "translate3d(-50%,0,0)" }}
+      className={styles.container}
+    >
       <div className={styles.title_block}>
         <img
           src={`http://localhost:4090${carInfo?.img}`}
@@ -280,153 +290,195 @@ const CarsCardList = () => {
           className={styles.car_img}
         />
 
-        <h1 className={styles.car_name}>{carInfo?.name}</h1>
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className={styles.car_name}
+        >
+          {carInfo?.name}
+        </motion.h1>
 
-        <img
+        <motion.img
           src={`http://localhost:4090${carInfo?.mpower}`}
           alt=""
           className={styles.car_mpower}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
         />
 
-        <div className={styles.car_power}>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className={styles.car_power}
+        >
           <span>{carInfo?.h_p}</span>
           <p>Мощность</p>
-        </div>
+        </motion.div>
 
-        <div className={styles.engine_type}>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+          className={styles.engine_type}
+        >
           <span>{carInfo?.engineType}</span>
           <p>Двигатель</p>
-        </div>
+        </motion.div>
       </div>
 
       <div className={styles.konfig_block}>
-        <p className={styles.konfig_car_name}>
+        <motion.p
+          animate={{ x: 100 }}
+          transition={{ ease: "easeOut", duration: 3 }}
+          className={styles.konfig_car_name}
+        >
           ВИЗУАЛИЗИРУЙТЕ ВАШ НОВЫЙ {carInfo?.name}
-        </p>
+        </motion.p>
 
         <div className={styles.car_configurator}>
-          {whiteColor && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_color_img[0]}`}
-              alt="car-white"
-              className={styles.car_congfig_color}
-            />
-          )}
-          {blackColor && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_color_img[1]}`}
-              alt="car-black"
-              className={styles.car_congfig_color}
-            />
-          )}
-          {blueColor && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_color_img[2]}`}
-              alt="car-blue"
-              className={styles.car_congfig_color}
-            />
-          )}
-          {redColor && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_color_img[3]}`}
-              alt="car-red"
-              className={styles.car_congfig_color}
-            />
-          )}
+          <AnimatePresence>
+            {whiteColor && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_color_img[0]}`}
+                alt="car-white"
+                className={styles.car_congfig_color}
+              />
+            )}
+            {blackColor && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_color_img[1]}`}
+                alt="car-black"
+                className={styles.car_congfig_color}
+              />
+            )}
+            {blueColor && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_color_img[2]}`}
+                alt="car-blue"
+                className={styles.car_congfig_color}
+              />
+            )}
+            {redColor && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_color_img[3]}`}
+                alt="car-red"
+                className={styles.car_congfig_color}
+              />
+            )}
 
-          {firstSteel && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_steels[0]}`}
-              alt="car-red"
-              className={styles.car_congfig_color}
-            />
-          )}
-          {secSteel && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_steels[1]}`}
-              alt="car-red"
-              className={styles.car_congfig_color}
-            />
-          )}
-          {thirdSteel && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_steels[2]}`}
-              alt="car-red"
-              className={styles.car_congfig_color}
-            />
-          )}
-          {fourthSteel && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_steels[3]}`}
-              alt="car-red"
-              className={styles.car_congfig_color}
-            />
-          )}
+            {firstSteel && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_steels[0]}`}
+                alt="car-red"
+                className={styles.car_congfig_color}
+              />
+            )}
+            {secSteel && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_steels[1]}`}
+                alt="car-red"
+                className={styles.car_congfig_color}
+              />
+            )}
+            {thirdSteel && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_steels[2]}`}
+                alt="car-red"
+                className={styles.car_congfig_color}
+              />
+            )}
+            {fourthSteel && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_steels[3]}`}
+                alt="car-red"
+                className={styles.car_congfig_color}
+              />
+            )}
 
-          {intererWhite && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_interer[0]}`}
-              alt="car-white"
-              className={styles.car_congfig_color}
-            />
-          )}
-          {intererRed && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_interer[1]}`}
-              alt="car-red"
-              className={styles.car_congfig_color}
-            />
-          )}
-          {intererGreyBlack && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_interer[2]}`}
-              alt="car-grey-black"
-              className={styles.car_congfig_color}
-            />
-          )}
-          {intererBlack && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_interer[3]}`}
-              alt="car-black"
-              className={styles.car_congfig_color}
-            />
-          )}
+            {intererWhite && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_interer[0]}`}
+                alt="car-white"
+                className={styles.car_congfig_color}
+              />
+            )}
+            {intererRed && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_interer[1]}`}
+                alt="car-red"
+                className={styles.car_congfig_color}
+              />
+            )}
+            {intererGreyBlack && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_interer[2]}`}
+                alt="car-grey-black"
+                className={styles.car_congfig_color}
+              />
+            )}
+            {intererBlack && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_interer[3]}`}
+                alt="car-black"
+                className={styles.car_congfig_color}
+              />
+            )}
 
-          {decorMesh && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_decor[0]}`}
-              alt="mesh"
-              className={styles.car_congfig_color}
-            />
-          )}
-          {decorKarbon && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_decor[1]}`}
-              alt="karbon"
-              className={styles.car_congfig_color}
-            />
-          )}
-          {decorBlack && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_decor[2]}`}
-              alt="black"
-              className={styles.car_congfig_color}
-            />
-          )}
-          {decorWhite && (
-            <img
-              src={`http://localhost:4090${carInfo?.car_decor[3]}`}
-              alt="white"
-              className={styles.car_congfig_color}
-            />
-          )}
+            {decorMesh && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_decor[0]}`}
+                alt="mesh"
+                className={styles.car_congfig_color}
+              />
+            )}
+            {decorKarbon && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_decor[1]}`}
+                alt="karbon"
+                className={styles.car_congfig_color}
+              />
+            )}
+            {decorBlack && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_decor[2]}`}
+                alt="black"
+                className={styles.car_congfig_color}
+              />
+            )}
+            {decorWhite && (
+              <img
+                src={`http://localhost:4090${carInfo?.car_decor[3]}`}
+                alt="white"
+                className={styles.car_congfig_color}
+              />
+            )}
+          </AnimatePresence>
 
-          <div className={styles.car_options}>
+          <motion.div className={styles.car_options}>
             <span onClick={() => handleColor()}>Цвета кузова</span>
             <span onClick={() => handleSteel()}>Колеса</span>
             <span onClick={() => handleInterer()}>Обивка</span>
             <span onClick={() => handleDecor()}>Декоративные планки</span>
-          </div>
+          </motion.div>
 
           {carColor && (
             <div className={styles.car_colors}>
@@ -505,31 +557,39 @@ const CarsCardList = () => {
 
           {carDecor && (
             <div className={styles.car_colors}>
-              <img
-                src={`http://localhost:4090${carInfo?.car_decor_img[0]}`}
-                alt="mesh"
-                onClick={() => handleMeshDecor()}
-              />
-              <img
-                src={`http://localhost:4090${carInfo?.car_decor_img[1]}`}
-                alt="karbon"
-                onClick={() => handleKarbonDecor()}
-              />
-              <img
-                src={`http://localhost:4090${carInfo?.car_decor_img[2]}`}
-                alt="black"
-                onClick={() => handleBlackDecor()}
-              />
-              <img
-                src={`http://localhost:4090${carInfo?.car_decor_img[3]}`}
-                alt="white"
-                onClick={() => handleWhiteDecor()}
-              />
+              {carInfo.car_decor_img[0] && (
+                <img
+                  src={`http://localhost:4090${carInfo?.car_decor_img[0]}`}
+                  alt="mesh"
+                  onClick={() => handleMeshDecor()}
+                />
+              )}
+              {carInfo.car_decor_img[1] && (
+                <img
+                  src={`http://localhost:4090${carInfo?.car_decor_img[1]}`}
+                  alt="karbon"
+                  onClick={() => handleKarbonDecor()}
+                />
+              )}
+              {carInfo.car_decor_img[2] && (
+                <img
+                  src={`http://localhost:4090${carInfo?.car_decor_img[2]}`}
+                  alt="black"
+                  onClick={() => handleBlackDecor()}
+                />
+              )}
+              {carInfo.car_decor_img[3] && (
+                <img
+                  src={`http://localhost:4090${carInfo?.car_decor_img[3]}`}
+                  alt="white"
+                  onClick={() => handleWhiteDecor()}
+                />
+              )}
             </div>
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

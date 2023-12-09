@@ -3,9 +3,9 @@ import styles from "./CarsCard.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchKonstruktorCar } from "../../features/carConstruktorSlice";
 import { Link, useParams } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const CarsCard = () => {
-
   const { categoryId } = useParams();
 
   const dispatch = useDispatch();
@@ -28,9 +28,11 @@ const CarsCard = () => {
         return (
           <Link to={`/carsKonstruktor/${konst._id}`}>
             <div className={styles.card}>
-              <img
+              <motion.img
                 src={`http://localhost:4090${konst.titleImg}`}
                 className={styles.card_img}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
               />
               <img
                 src={`http://localhost:4090${konst.mpower}`}

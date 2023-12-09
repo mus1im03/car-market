@@ -1,5 +1,6 @@
 main {
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    margin-bottom: 100px;
 }
 
 .main_container {
@@ -8,9 +9,10 @@ main {
 
 .background {
     position: relative;
-    background-image: url('https://www.bmw.ru/content/dam/bmw/marketRU/bmw_ru/topics/offers-and-services/original-bmw-accessories/wheels/wheels_winter/snow_01102023_1680.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1696240757571.jpg');
-    height: 700px;
+    /* background-image: url('https://www.bmw.ru/content/dam/bmw/marketRU/bmw_ru/topics/offers-and-services/original-bmw-accessories/wheels/wheels_winter/snow_01102023_1680.jpg/jcr:content/renditions/cq5dam.resized.img.1680.large.time1696240757571.jpg'); */
+    /* height: 700px; */
     background-repeat: no-repeat;
+    background-color: #2f2e2e;
 }
 
 .hello_block {
@@ -98,6 +100,6 @@ h1 {
 }
 
 .options_block button:hover {
-    border: 2px solid #262626;
-    margin-bottom: -2px;
+    /* border: 2px solid #262626; */
+    /* margin-bottom: -2px; */
 }
