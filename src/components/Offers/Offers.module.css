@@ -64,7 +64,7 @@ body .offer{
     margin-top: 30px;
 }
 
-.btn button{
+.btn button {
     width: 300px;
     height: 50px;
     background-color: rgb(28, 105, 212);
@@ -72,9 +72,21 @@ body .offer{
     font-size: 16px;
     font-weight: 800;
     border: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn button:hover {
+    background-color: rgb(13, 68, 145);
 }
 
 .checked{
     display: flex;
     margin: 0;
+}
+
+.zapros {
+    margin: 40px auto 0 auto;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
 }

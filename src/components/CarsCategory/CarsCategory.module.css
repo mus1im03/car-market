@@ -10,6 +10,10 @@
   font-size: 32px;
 }
 
+.choose_bmw_title {
+  width: 700px;
+}
+
 .categories {
   /* display: flex; */
   margin-top: 30px;

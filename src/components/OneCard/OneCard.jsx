@@ -5,10 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCars } from "../../features/carsSlice";
 import Infomode from "./Infomode";
 import { dataBase } from "./fakedatabase";
-
 import Offers from "../Offers/Offers";
-
 import { useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import {motion} from 'framer-motion'
+
 
 const OneCard = () => {
   const dispatch = useDispatch();
@@ -19,12 +22,20 @@ const OneCard = () => {
     state.cars.cars.find((cars) => cars._id === id)
   );
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   const scroll = () => {
     window.scrollBy({
       top: 1200,
-      behavior : 'smooth'
-    })
-  }
+      behavior: "smooth",
+    });
+  };
 
   useEffect(() => {
     dispatch(fetchCars());
@@ -37,17 +48,18 @@ const OneCard = () => {
   };
 
   return (
-    <div>
+    <motion.div initial={{width: 0}} animate={{width: "100%"}} exit={{x: window.innerWidth, transition: {duration: 0.5}}}>
       <div>
         <div className={styles.cont}>
           <div className={styles.img}>
-            <img
-              src={`http://localhost:4090${carInf?.cars_info.image[0]}`}
-              alt="photo"
-            />
+            <Slider {...settings}>
+              {carInf?.cars_info.image.map((item) => (
+                <img src={`http://localhost:4090${item}`} alt="" />
+              ))}
+            </Slider>
           </div>
           <div className={styles.title}>
-            <div>
+            <div className={styles.title_first_block}>
               <p>{carInf?.cars_info.name}</p>
               <div className={styles.p}>
                 <p>{carInf?.cars_info.h_p} Бензин</p>
@@ -183,9 +195,9 @@ const OneCard = () => {
         </div>
       </div>
       <div className={styles.offers}>
-        <Offers/>
+        <Offers />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

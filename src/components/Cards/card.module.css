@@ -1,37 +1,67 @@
+.categories {
+  margin-top: 30px;
+  /* margin-left: 25px; */
+  border-bottom: 1px solid #666;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.wrapper {
+  width: 75%;
+  margin-left: 30px;
+}
+
+.category_name {
+  margin-right: 30px;
+  color: #666;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  cursor: pointer;
+  padding-bottom: 29px;
+}
+
+.category_name:hover {
+  color: black;
+  border-bottom: 3px solid black;
+}
+
 .carta {
-    cursor: pointer;
-    margin-top: 50px;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease;
+  width: 70%;
+  margin: 50px auto;
 }
 
 .osnova {
-    margin-top: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-around; */
 }
 
-.image img{
-    width: 292px;
-    height: 219px;
-
+.image img {
+  width: 292px;
+  height: 219px;
 }
 
 .character {
-list-style-type: none;
-padding: 0;
-display: flex;
-flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.character li{
-    margin-bottom: 10px;
+.character li {
+  margin-bottom: 10px;
+  font-size: 12px;
 }
 
-.carta:hover{
-    box-shadow: -1px 5px 8px 0px rgba(34, 60, 80, 0.2);
+.carta:hover {
+  box-shadow: -1px 5px 8px 0px rgba(34, 60, 80, 0.2);
 }
 
-.info{
-    padding: 10px;
+.info {
+  padding: 10px;
 }

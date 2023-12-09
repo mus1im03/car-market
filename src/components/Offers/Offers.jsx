@@ -4,23 +4,23 @@ import styles from "./Offers.module.css";
 import { useDispatch } from "react-redux";
 import { postNewOffer } from "../../features/offerSlice";
 import { useParams } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Offers = () => {
   const dispatch = useDispatch();
 
-  const {id} = useParams()
+  const { id } = useParams();
 
-  
-  const [gender, setGender] = useState('');
-  
-  console.log(gender);
+  const [gender, setGender] = useState("");
+
+  const [zapros, setZapros] = useState(false);
 
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [phone, setPhone] = useState("");
-  const [agreement, setAgreement] = useState(false)
+  const [agreement, setAgreement] = useState(false);
 
-  const [valid, setVlid] = useState(false)
+  const [valid, setVlid] = useState(false);
 
   const handleInputName = (e) => {
     setName(e.target.value);
@@ -31,7 +31,7 @@ const Offers = () => {
   };
 
   const handleInputPhone = (e) => {
-    setPhone(e.target.value)
+    setPhone(e.target.value);
   };
 
   const handleCheckboxChange = () => {
@@ -60,7 +60,7 @@ const Offers = () => {
             type="radio"
             id="gospodin"
             name="drone"
-            value={'Господин'}
+            value={"Господин"}
             onChange={(e) => setGender(e.target.value)}
           />
           <label htmlFor="gospodin">Господин</label>
@@ -69,8 +69,7 @@ const Offers = () => {
           <input
             type="radio"
             id="gospoja"
-            value={'Госпожа'}
-
+            value={"Госпожа"}
             name="drone"
             onChange={(e) => setGender(e.target.value)}
           />
@@ -116,9 +115,17 @@ const Offers = () => {
           />
           <p>Соглашение о неразглашении.</p>
         </div>
-        <div className={styles.btn}>
-          <button type="submit">Отправить</button>
-        </div>
+        <motion.div
+          className={styles.btn}
+          whileHover={{ scale: 1.2 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        >
+          <button type="submit" onClick={() => setZapros(true)}>
+            Отправить
+          </button>
+        </motion.div>
+        {zapros && <span className={styles.zapros}>Запрос отправлен</span>}
       </form>
     </div>
   );

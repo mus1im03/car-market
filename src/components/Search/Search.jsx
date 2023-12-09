@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCars } from "../../features/carsSlice";
 import styles from './Search.module.css'
 import { Link } from "react-router-dom";
+import {motion} from 'framer-motion'
 
 const Search = () => {
 
@@ -21,7 +22,7 @@ const Search = () => {
   }, [dispatch]);
 
   return (
-    <div className={styles.block_input}>
+    <motion.div initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}} className={styles.block_input}>
       <input
         type="text"
         id=""
@@ -36,7 +37,7 @@ const Search = () => {
             </Link>
           ))}
       </ul>
-    </div>
+    </motion.div>
   );
 };
 
