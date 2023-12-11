@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import CarModel from "../3Dmodel/CarModel";
 import { motion } from "framer-motion";
+// import ParticlesBackground from "../AnimationBack/ParticlesBackground";
 
 const MainContent = () => {
-  const dispatch = useDispatch();
   return (
     <motion.main
       initial={{ opacity: 0, transform: "translate3d(100%,0,0)" }}
@@ -48,7 +48,7 @@ const MainContent = () => {
             <div className={styles.options_block}>
               <img src={remont} alt="remont" />
               <span className={styles.card_text}>Запись на сервис</span>
-              <Link to='/service'>
+              <Link to="/service">
                 <motion.button
                   whileHover={{ scale: 1.2 }}
                   onHoverStart={(e) => {}}

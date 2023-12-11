@@ -6,8 +6,16 @@
   padding-bottom: 30px;
 }
 
+.cards_block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .wrapper {
-  width: 75%;
+  /* width: 75%; */
   margin-left: 30px;
 }
 
@@ -29,8 +37,9 @@
 .carta {
   cursor: pointer;
   transition: box-shadow 0.5s ease;
-  width: 70%;
+  width: 100%;
   margin: 50px auto;
+  background-color: rgb(238, 236, 232);
 }
 
 .osnova {

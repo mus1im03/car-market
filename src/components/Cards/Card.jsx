@@ -63,44 +63,43 @@ const Card = () => {
         </motion.div>
       </div>
 
-      {cars.map((car) => {
-        return (
-          <Link to={`/carsList/${car._id}`}>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.8,
-                delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01],
-              }}
-              className={styles.carta}
-              key={car._id}
-            >
-              <div className={styles.image}>
-                <Slider {...settings}>
-                  {car.cars_info.image.map((item) => {
-                    return (
-                      <img src={`http://localhost:4090${item}`} alt="car" />
-                    );
-                  })}
-                </Slider>
-              </div>
-              <div className={styles.info}>
-                <h4>{car.cars_info.name}</h4>
-                <p>Год выпуска: {car.cars_info.year} г.</p>
-                <ul className={styles.character}>
-                  <li>Мощность: {car.cars_info.h_p} </li>
-                  <li>Коробка передач: {car.cars_info.transmission}</li>
-                  <li>Привод: {car.cars_info.drive_unit}</li>
-                  <li>Пробег: {car.cars_info.mileage}</li>
-                  <li>Кол-во владельцев: {car.cars_info.owners} </li>
-                </ul>
-              </div>
-            </motion.div>
-          </Link>
-        );
-      })}
+      <div className={styles.cards_block}>
+        {cars.map((car) => {
+          return (
+            <Link to={`/carsList/${car._id}`}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.5,
+                  ease: [0, 0.71, 0.2, 1.01],
+                }}
+                className={styles.carta}
+                key={car._id}
+              >
+                <div className={styles.image}>
+                  <img
+                    src={`http://localhost:4090${car.cars_info.image[0]}`}
+                    alt="car"
+                  />
+                </div>
+                <div className={styles.info}>
+                  <h4>{car.cars_info.name}</h4>
+                  <p>Год выпуска: {car.cars_info.year} г.</p>
+                  <ul className={styles.character}>
+                    <li>Мощность: {car.cars_info.h_p} </li>
+                    <li>Коробка передач: {car.cars_info.transmission}</li>
+                    <li>Привод: {car.cars_info.drive_unit}</li>
+                    <li>Пробег: {car.cars_info.mileage}</li>
+                    <li>Кол-во владельцев: {car.cars_info.owners} </li>
+                  </ul>
+                </div>
+              </motion.div>
+            </Link>
+          );
+        })}
+      </div>
     </motion.div>
   );
 };

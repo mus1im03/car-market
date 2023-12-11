@@ -119,19 +119,19 @@ const OneCard = () => {
                   <p>ДВИГАТЕЛЬ</p>
                   <div className={styles.info_block}>
                     <div className={styles.info_blocks}>
-                      <p>Рабочий объем, куб. см ................</p>
+                      <p>Рабочий объем, куб. см ................{carInf?.engine.working_volume}</p>
                       <p>
                         Максимальный крутящий момент, Н•м при об/мин
-                        ................
+                        ................{carInf?.engine.maximum_torque}
                       </p>
                     </div>
                     <div className={styles.info_blocks}>
                       <p>
-                        Максимальная мощность, л. с. при об/мин ................
+                        Максимальная мощность, л. с. при об/мин ................{carInf?.engine.maximum_power}
                       </p>
                       <p>
                         Количество цилиндров / клапанов на цилиндр
-                        ................
+                        ................{carInf?.engine.number_of_cylinders}
                       </p>
                     </div>
                   </div>
@@ -141,10 +141,10 @@ const OneCard = () => {
                   <p>ХОДОВЫЕ КАЧЕСТВА</p>
                   <div className={styles.info_block}>
                     <div className={styles.info_blocks}>
-                      <p>Максимальная скорость, км/ч ................</p>
+                      <p>Максимальная скорость, км/ч ................{carInf?.driving_performance.maximum_speed}</p>
                     </div>
                     <div className={styles.info_blocks}>
-                      <p>Время разгона 0–100 км/ч, сек ................</p>
+                      <p>Время разгона 0–100 км/ч, сек ................{carInf?.driving_performance.acceleration_time}</p>
                     </div>
                   </div>
                 </div>
@@ -153,12 +153,12 @@ const OneCard = () => {
                   <p>РАСХОД ТОПЛИВА</p>
                   <div className={styles.info_block}>
                     <div className={styles.info_blocks}>
-                      <p>Смешанный цикл, л/100 км ................</p>
-                      <p>Загородный цикл, л/100 км ................</p>
+                      <p>Смешанный цикл, л/100 км ................{carInf?.fuel_consuption.combined_cycle}</p>
+                      <p>Загородный цикл, л/100 км ................{carInf?.fuel_consuption.extra_urban_cycle}</p>
                     </div>
                     <div className={styles.info_blocks}>
-                      <p>Городской цикл, л/100 км ................</p>
-                      <p>Выброс СО2, г/км ................</p>
+                      <p>Городской цикл, л/100 км ................{carInf?.fuel_consuption.urban_cycle}</p>
+                      <p>Выброс СО2, г/км ................{carInf?.fuel_consuption.co2_emissions}</p>
                     </div>
                   </div>
                 </div>
@@ -167,12 +167,12 @@ const OneCard = () => {
                   <p>ГАБАРИТЫ</p>
                   <div className={styles.info_block}>
                     <div className={styles.info_blocks}>
-                      <p>Длина, мм ................</p>
-                      <p>Высота, мм (вместе с антенной) ................</p>
+                      <p>Длина, мм ................{carInf?.dimensions.length_mm}</p>
+                      <p>Высота, мм (вместе с антенной) ................{carInf?.dimensions.height_mm}</p>
                     </div>
                     <div className={styles.info_blocks}>
-                      <p>Ширина, мм ................</p>
-                      <p>Клиренс, мм ................</p>
+                      <p>Ширина, мм ................{carInf?.dimensions.width_mm}</p>
+                      <p>Клиренс, мм ................{carInf?.dimensions.ground_clearance}</p>
                     </div>
                   </div>
                 </div>
@@ -181,10 +181,10 @@ const OneCard = () => {
                   <p>МАССА</p>
                   <div className={styles.info_block}>
                     <div className={styles.info_blocks}>
-                      <p>Собственная масса (ЕС), кг................</p>
+                      <p>Собственная масса (ЕС), кг................{carInf?.weight.unladen_weight}</p>
                     </div>
                     <div className={styles.info_blocks}>
-                      <p>Допустимая полная масса, кг ................</p>
+                      <p>Допустимая полная масса, кг ................{carInf?.weight.permissible_total}</p>
                     </div>
                   </div>
                 </div>
