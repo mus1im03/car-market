@@ -23,13 +23,10 @@ const CarModel = () => {
         <ambientLight intensity={0.5} />
         <OrbitControls enableZoom={false} />
         <Suspense fallback={null}>
-          {/* <Float> */}
           <M4
             scale={1}
-            // position={[-0.5, -0.5, -2.5]}
             rotation={[0, Math.PI / 5, 0]}
           />
-          {/* </Float> */}
         </Suspense>
         <Environment preset="sunset" />
       </Canvas>

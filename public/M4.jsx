@@ -22,14 +22,8 @@ export default function Model(props) {
     }
   };
 
-  const rotateModel = (degrees) => {
-    group.current.rotation.y = (Math.PI / 180) * degrees;
-  };
-
   useEffect(() => {
     playAnimation("explode");
-
-    // rotateModel(45);
   }, []);
 
   return (
