@@ -17,7 +17,22 @@
 
 <h1>Технологии проекта</h1>
 <br>
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+<li>React</li>
+<li>Redux</li>
+<li>Redux-ToolKit</li>
+<li>Redux Thunk</li>
+<li>React Router</li>
+<li>Prettier</li>
+<li>Git</li>
+<li>Node js</li>
+<li>NodeJS</li>
+<li>JavaScript</li>
+<br>
+
+<h1>Команда проекта</h1>
+<br>
+<li><a href="https://github.com/mus1im03"></a></li>
+<li><a href="https://github.com/ltovsultanovl"></a></li>
+<li><a href="https://github.com/YacubB"></a></li>
+<li><a href="https://github.com/Halifat77"></a></li>
+<li><a href="https://github.com/Rahman095"></a></li>
