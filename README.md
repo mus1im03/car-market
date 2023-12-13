@@ -31,18 +31,8 @@
 
 <h2>Команда проекта</h2>
 <br>
-<a color='#fff' href="https://github.com/mus1im03"><img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/> BARIEV MUSLIM</a>
-<a color='#fff' href="https://github.com/ltovsultanovl"><img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/> TOVSULTANOV SHAMHAN</a>
-<a color='#fff' href="https://github.com/YacubB"><img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/> BAHANOEV YAKUB</a>
-<a color='#fff' href="https://github.com/Halifat77"><img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/> SHIMAEV ABDUL-MALIK</a>
-<a  color='#fff' href="https://github.com/Rahman095"><img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/> HADZHIEV RAHMAN</a>
-
-<style>
-    а {
-        display: flex;
-        align-items: center;
-        margin-right: 10px;
-        background-color: black;
-      text-decoration: none;
-    }
-  </style>
+<a style="background-color: black; display: flex; align-items: center; text-decoration: none; color: #fff; margin-right: 10px;" href="https://github.com/mus1im03"><img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/> BARIEV MUSLIM</a>
+<a style="background-color: black; display: flex; align-items: center; text-decoration: none; color: #fff; margin-right: 10px;" href="https://github.com/ltovsultanovl"><img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/> TOVSULTANOV SHAMHAN</a>
+<a style="background-color: black; display: flex; align-items: center; text-decoration: none; color: #fff; margin-right: 10px;" href="https://github.com/YacubB"><img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/> BAHANOEV YAKUB</a>
+<a style="background-color: black; display: flex; align-items: center; text-decoration: none; color: #fff; margin-right: 10px;" href="https://github.com/Halifat77"><img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/> SHIMAEV ABDUL-MALIK</a>
+<a  style="background-color: black; display: flex; align-items: center; text-decoration: none; color: #fff; margin-right: 10px;" href="https://github.com/Rahman095"><img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/> HADZHIEV RAHMAN</a>
