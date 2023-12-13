@@ -45,7 +45,7 @@
 </div>
 <div style="display: flex; align-items: center;">
   <img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/>
-  <a href="https://github.com/Halifat77" style="color: #fff; margin-left: 10px;">SHIMAEV ABDUL-MALIK</a>
+  <a href="https://github.com/Halifat77" color='#fff' margin-left='10px'>SHIMAEV ABDUL-MALIK</a>
 </div>
 <div style="display: flex; align-items: center;">
   <img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/>
