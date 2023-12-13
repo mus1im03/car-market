@@ -1,7 +1,7 @@
 <h1>Диллерский центр</h1>
 <br>
 
-<h1>Функционал сайта</h1>
+<h2>Функционал сайта</h2>
 <br>
 <li>Конфигуратор машин</li>
 <li>Категории машин</li>
@@ -15,7 +15,7 @@
 
 <img src='konfigurator.gif'>
 
-<h1>Технологии проекта</h1>
+<h2>Технологии проекта</h2>
 <br>
 <li>React</li>
 <li>Redux</li>
@@ -29,10 +29,10 @@
 <li>JavaScript</li>
 <br>
 
-<h1>Команда проекта</h1>
+<h2>Команда проекта</h2>
 <br>
-<li><a href="https://github.com/mus1im03"></a></li>
-<li><a href="https://github.com/ltovsultanovl"></a></li>
-<li><a href="https://github.com/YacubB"></a></li>
-<li><a href="https://github.com/Halifat77"></a></li>
-<li><a href="https://github.com/Rahman095"></a></li>
+<a href="https://github.com/mus1im03"><img src='./src/assets/img/3291667 (1).png'/> BARIEV MUSLIM</a>
+<a href="https://github.com/ltovsultanovl"><img src='./src/assets/img/3291667 (1).png'/> TOVSULTANOV SHAMHAN</a>
+<a href="https://github.com/YacubB"><img src='./src/assets/img/3291667 (1).png'/> BAHANOEV YAKUB</a>
+<a href="https://github.com/Halifat77"><img src='./src/assets/img/3291667 (1).png'/> SHIMAEV ABDUL-MALIK</a>
+<a href="https://github.com/Rahman095"><img src='./src/assets/img/3291667 (1).png'/> HADZHIEV RAHMAN</a>
