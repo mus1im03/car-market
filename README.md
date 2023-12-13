@@ -31,8 +31,23 @@
 
 <h2>Команда проекта</h2>
 <br>
-<img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/><a href="https://github.com/mus1im03"> BARIEV MUSLIM</a>
-<img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/><a href="https://github.com/ltovsultanovl"> TOVSULTANOV SHAMHAN</a>
-<img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/><a href="https://github.com/YacubB"> BAHANOEV YAKUB</a>
-<img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/><a href="https://github.com/Halifat77"> SHIMAEV ABDUL-MALIK</a>
-<img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/><a href="https://github.com/Rahman095"> HADZHIEV RAHMAN</a>
+<div style="display: flex; align-items: center;">
+  <img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/>
+  <a href="https://github.com/mus1im03" style="color: #fff; margin-left: 10px;">BARIEV MUSLIM</a>
+</div>
+<div style="display: flex; align-items: center;">
+  <img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/>
+  <a href="https://github.com/ltovsultanovl" style="color: #fff; margin-left: 10px;">TOVSULTANOV SHAMHAN</a>
+</div>
+<div style="display: flex; align-items: center;">
+  <img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/>
+  <a href="https://github.com/YacubB" style="color: #fff; margin-left: 10px;">BAHANOEV YAKUB</a>
+</div>
+<div style="display: flex; align-items: center;">
+  <img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/>
+  <a href="https://github.com/Halifat77" style="color: #fff; margin-left: 10px;">SHIMAEV ABDUL-MALIK</a>
+</div>
+<div style="display: flex; align-items: center;">
+  <img width='28px' height='28px' src='./src/assets/img/3291667 (1).png'/>
+  <a href="https://github.com/Rahman095" style="color: #fff; margin-left: 10px;">HADZHIEV RAHMAN</a>
+</div>
